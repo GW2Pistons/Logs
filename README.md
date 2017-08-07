@@ -1,2 +1,2 @@
 <p align="center"><b>GW2 Raid Logs</b></p>
-![Guild Wars 2](https://github.com/GW2Pistons/Logs/blob/master/GW2PoF.png)
+<p align="center"><img width=50% src="https://github.com/GW2Pistons/Logs/blob/master/GW2PoF.png"></p>
