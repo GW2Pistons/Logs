@@ -1,6 +1,5 @@
 ---
 <p align="center">Guild Wars 2 - Raid Logs</p>
----
 
 ​![Logo](GW2PoF.png)
 
