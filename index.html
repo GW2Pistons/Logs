@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="Pages/assets/css/style.css?v=121cf4cec5fad70b42c17647c012d859b8c63df5" media="screen" type="text/css">
+    <link rel="stylesheet" href="Pages/assets/css/print.css" media="print" type="text/css">
+	<script type="text/javascript" src="Pages/assets/js/jquery-1.10.2.min.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Logs by GW2Pistons</title>
+  </head>
+  
+  <script type="text/javascript">
+	
+	function outputPageContent(id, title, repositories) 
+	{	
+		var outhtml = '';	
+		if(repositories.length == 0) 
+		{ 
+			outhtml = outhtml + '<p>No repos!</p></div>'; 
+		}
+		else 
+		{
+			outhtml = outhtml + '<h4>' + title + ':</h4> <ul style="list-style: none;font-size: 12px;">';
+			$.each(repositories, function(index) {
+				if(repositories[index].name == 'README.md')
+				{
+					return;
+				}
+				// Prepend: http://htmlpreview.github.io/?
+				// This opens the html previewer.
+				outhtml = outhtml + '<li><a href="http://htmlpreview.github.io/?'+repositories[index].html_url+'" target="_blank">'+repositories[index].name + '</a></li>';
+			});
+			outhtml = outhtml + '</ul></div>'; 
+		}
+		$(id).html(outhtml);
+	} // end outputPageContent()
+	
+	function requestJSON(url, callback) 
+	{
+		$.ajax({
+			url: url,
+			complete: function(xhr) 
+			{
+				callback.call(null, xhr.responseJSON);
+			}
+		});
+	}
+	
+	/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+	Spirit Vale
+	_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+	
+	// Vale Guardian
+	var raidBoss_VG_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Vale%20Guardian?ref=master'; 
+	var raidBoss_VG_Array; 
+	
+	$.getJSON(raidBoss_VG_URI, function(json){
+	  raidBoss_VG_Array = json;   
+	  outputPageContent('#divVG', 'Vale Guardian', raidBoss_VG_Array);                
+	});
+	
+	// Gorseval the Multifarious
+	var raidBoss_Gorse_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Gorseval%20the%20Multifarious?ref=master'; 
+	var raidBoss_Gorse_Array; 
+	
+	$.getJSON(raidBoss_Gorse_URI, function(json){
+	  raidBoss_Gorse_Array = json;   
+	  outputPageContent('#divGorse', 'Gorseval the Multifarious', raidBoss_Gorse_Array);                
+	});
+	
+	// Sabetha the Saboteur
+	var raidBoss_Sab_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Sabetha%20the%20Saboteur?ref=master'; 
+	var raidBoss_Sab_Array; 
+	
+	$.getJSON(raidBoss_Sab_URI, function(json){
+	  raidBoss_Sab_Array = json;   
+	  outputPageContent('#divSab', 'Sabetha the Saboteur', raidBoss_Sab_Array);                
+	});
+	
+	/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+	Salvation Pass
+	_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+	
+	// Slothasor
+	var raidBoss_Sloth_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Slothasor?ref=master'; 
+	var raidBoss_Sloth_Array; 
+	
+	$.getJSON(raidBoss_Sloth_URI, function(json){
+	  raidBoss_Sloth_Array = json;   
+	  outputPageContent('#divSloth', 'Slothasor', raidBoss_Sloth_Array);                
+	});
+	
+	// Matthias Gabrel
+	var raidBoss_Matty_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Matthias%20Gabrel?ref=master'; 
+	var raidBoss_Matty_Array; 
+	
+	$.getJSON(raidBoss_Matty_URI, function(json){
+	  raidBoss_Matty_Array = json;   
+	  outputPageContent('#divMatty', 'Matthias Gabrel', raidBoss_Matty_Array);                
+	});
+	
+	/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+	Stronghold of the Faithful
+	_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+	
+	// Keep Construct
+	var raidBoss_KC_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Keep%20Construct?ref=master'; 
+	var raidBoss_KC_Array; 
+	
+	$.getJSON(raidBoss_KC_URI, function(json){
+	  raidBoss_KC_Array = json;   
+	  outputPageContent('#divKC', 'Keep Construct', raidBoss_KC_Array);                
+	});
+	
+	// Xera
+	var raidBoss_Xera_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Xera?ref=master'; 
+	var raidBoss_Xera_Array; 
+	
+	$.getJSON(raidBoss_Xera_URI, function(json){
+	  raidBoss_Xera_Array = json;   
+	  outputPageContent('#divXera', 'Xera', raidBoss_Xera_Array);                
+	});
+	
+	/*_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+	Bastion of the Penitent
+	_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+	
+	// Cairn the Indomitable
+	var raidBoss_Cairn_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Cairn%20the%20Indomitable?ref=master'; 
+	var raidBoss_Cairn_Array; 
+	
+	$.getJSON(raidBoss_Cairn_URI, function(json){
+	  raidBoss_Cairn_Array = json;   
+	  outputPageContent('#divCairn', 'Cairn the Indomitable', raidBoss_Cairn_Array);                
+	}); 
+	
+	// Mursaat Overseer
+	var raidBoss_MO_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Mursaat%20Overseer?ref=master'; 
+	var raidBoss_MO_Array; 
+	
+	$.getJSON(raidBoss_MO_URI, function(json){
+	  raidBoss_MO_Array = json;   
+	  outputPageContent('#divMO', 'Mursaat Overseer', raidBoss_MO_Array);                
+	}); 
+	
+	// Samarog
+	var raidBoss_Samarog_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Samarog?ref=master'; 
+	var raidBoss_Samarog_Array; 
+	
+	$.getJSON(raidBoss_Samarog_URI, function(json){
+	  raidBoss_Samarog_Array = json;   
+	  outputPageContent('#divSamarog', 'Samarog', raidBoss_Samarog_Array);                
+	}); 
+	
+	// Deimos
+	var raidBoss_Deimos_URI = 'https://api.github.com/repos/GW2Pistons/Logs/contents/Deimos?ref=master'; 
+	var raidBoss_Deimos_Array; 
+	
+	$.getJSON(raidBoss_Deimos_URI, function(json){
+	  raidBoss_Deimos_Array = json;   
+	  outputPageContent('#divDeimos', 'Deimos', raidBoss_Deimos_Array);                
+	}); 
+    
+    
+  //document.getElementById("fooHolder").innerHTML = foo.toString();
+  </script>
+
+  <body>
+    <header>
+      <div class="inner">
+        <a href="https://gw2pistons.github.io/Logs/">
+          <h1>​<img src="Pages/assets/images/sE-logo.png" alt="Logo" style="vertical-align: top;height: 65px;" /> GW2 Raid Logs</h1>
+        </a>
+        <h2>By Pistons</h2>
+        
+          <!-- <a href="https://github.com/GW2Pistons/Logs" class="button"><small>View project on</small> GitHub</a> -->
+        
+        
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+	  
+        <!-- <section id="main-content">			 -->
+		
+		<table id="main-content" width=100% height=100% style="margin: 0px auto;">
+			<tr>
+				<!-- Page 1 -->
+				<td width=25% valign="top">
+				
+					<!--_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+					Spirit Vale
+					_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/-->
+					<h2 class="raidwingheader">Spirit Vale</h2>
+					<div id="divVG" class="clearfix"></div>
+					<div id="divGorse" class="clearfix"></div>
+					<div id="divSab" class="clearfix"></div>
+					<!-- <hr/> -->
+			
+				</td>
+				
+				<!-- Page 2 -->
+				<td width=25% valign="top">
+				
+					<!--_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+					Salvation Pass
+					_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/-->
+					<h2 class="raidwingheader">Salvation Pass</h2>
+					<div id="divSloth" class="clearfix"></div>
+					<div id="divMatty" class="clearfix"></div>
+					<!-- <hr/> -->
+					
+				</td>
+				
+				<!-- Page 3 -->
+				<td width=25% valign="top">
+				
+					<!--_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+					Stronghold of the Faithful
+					_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/-->
+					<h2 class="raidwingheader">Stronghold of the Faithful</h2>
+					<div id="divKC" class="clearfix"></div>
+					<div id="divXera" class="clearfix"></div>
+					<!-- <hr/> -->
+					
+				</td>
+				
+				<!-- Page 4 -->
+				<td width=25% valign="top">
+				
+					<!--_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+					Bastion of the Penitent
+					_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/-->	
+					<h2 class="raidwingheader">Bastion of the Penitent</h2>
+					<div id="divCairn" class="clearfix"></div>
+					<div id="divMO" class="clearfix"></div>
+					<div id="divSamarog" class="clearfix"></div>
+					<div id="divDeimos" class="clearfix"></div>
+					<!-- <hr/> -->
+					
+				</td>
+			</tr>
+		</table>
+			
+
+        <!-- </section> -->
+
+        <!-- <aside id="sidebar"> -->
+          
+
+          
+            <!-- <p class="repo-owner"><a href="https://github.com/GW2Pistons/Logs">Logs</a> is maintained by <a href="https://github.com/GW2Pistons">GW2Pistons</a>.</p> -->
+          
+
+          <!-- <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</p> -->
+        <!-- </aside> -->
+		
+		
+      </div>
+    </div>
+	
+	<footer>
+      <div class="inner">
+	  <h2 style="font-size:16px">Arnyl is a nub</h2>
+      </div>
+	</footer>
+
+    
+  </body>
+</html>
